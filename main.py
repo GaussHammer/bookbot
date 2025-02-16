@@ -1,5 +1,7 @@
+import sys
+
 def main():
-    book_path = "books/frankenstein.txt"
+    book_path = sys.argv[1]
     with open(book_path) as f:
         file_contents = f.read()
     print(return_total_words(file_contents))
