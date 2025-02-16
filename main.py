@@ -4,6 +4,7 @@ def main():
         file_contents = f.read()
     print(return_total_words(file_contents))
     print(total_chars(file_contents))
+    total_letters(total_chars(file_contents))
 
 def return_total_words(text):
     total_words = text.split()
@@ -14,14 +15,16 @@ def sort_on(dict):
 
 def total_chars(text):
     chars_count = {}
-    only_letters = []
     text = text.lower()
     for i in range(len(text)):
             if text[i] not in chars_count:
                 chars_count[text[i]] = 1
             else:
                 chars_count[text[i]] += 1
-    
+    return chars_count
+
+def total_letters(chars_count):
+    only_letters = []
     for key in chars_count:
          if key.isalpha():
               value = chars_count.get(key)
